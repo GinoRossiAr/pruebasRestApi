@@ -15,12 +15,10 @@ exports.mostrarInfo = (provincia) => { // este modulo se exporta al metodo post 
         console.log("Latitud de la provincia: ", datosJson.provincias[0].centroide.lat);
         console.log("Longitud de la provincia: ", datosJson.provincias[0].centroide.lon);
         console.log("*************\n");
-        return true;
     })
     .catch(error => { 
         // se podrian especificar los tipos de errores. por ej "undefined" probablemente es que la provincia
         // no exista.
         console.log("Ocurrió un error: ", error); 
-        return false;
     })
 }

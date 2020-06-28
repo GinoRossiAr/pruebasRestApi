@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
-  estado = provincias_controller.mostrarInfo(req.body.nombreProv);
+  provincias_controller.mostrarInfo(req.body.nombreProv);
   res.render('index', { desc: 'Revisar consola de node'});
 });
 
