@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 usando API para obtener datos de provincias
+  form(name="localizador", method="post")
+    div.input
+      span.label Nombre provincia
+      input(type='text', name='nombreProv')
+    div.actions
+      input(type='submit', value='Buscar')
+    p=desc
