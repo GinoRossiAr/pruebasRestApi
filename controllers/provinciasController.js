@@ -4,9 +4,9 @@ const URL_BASE = "https://apis.datos.gob.ar/georef/api/provincias?nombre=";
 const CONFIG = { method: "Get" }; // aca se configuran tambien los cabezales 
 
 exports.mostrarInfo = (provincia) => { // este modulo se exporta al metodo post en routes/index.js
-    let URL = URL_BASE + provincia;
+    let url = URL_BASE + provincia;
 
-    fetch(URL, CONFIG) // promesa
+    fetch(url, CONFIG) // promesa
     .then(response => response.json())
     .then(datosJson => {
         console.log("\n*** DATOS ***");
