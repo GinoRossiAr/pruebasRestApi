@@ -2,11 +2,13 @@ const fetch = require('node-fetch');
 
 const URL_BASE = "https://apis.datos.gob.ar/georef/api/provincias?nombre=";
 const CONFIG = { method: "Get" }; // aca se configuran tambien los cabezales 
+const prov = {};
 
-exports.mostrarInfo = (provincia) => { // este modulo se exporta al metodo post en routes/index.js
+const mostrarInfo = async(provincia) => { // este modulo se exporta al metodo post en routes/index.js
     let url = URL_BASE + provincia;
+    let respuesta; 
 
-    fetch(url, CONFIG) // promesa
+    await fetch(url, CONFIG) // promesa
     .then(response => response.json())
     .then(datosJson => {
         console.log("\n*** DATOS ***");
@@ -21,4 +23,8 @@ exports.mostrarInfo = (provincia) => { // este modulo se exporta al metodo post 
         // no exista.
         console.log("Ocurrió un error: ", error); 
     })
+    return respuesta;
 }
+
+prov.mostrarInfo = mostrarInfo;
+module.exports = prov;
