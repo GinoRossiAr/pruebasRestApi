@@ -9,13 +9,10 @@ const mostrarInfo = async(provincia) => { // este modulo se exporta al metodo po
     let respuesta; 
 
     await fetch(url, CONFIG) // promesa
-    .then(response => response.json())
+    .then(response => respuesta = response.json())
     .then(datosJson => {
-        console.log("\n*** DATOS ***");
-        console.log("ID de la provincia: ", datosJson.provincias[0].id);
-        console.log("Nombre de la provincia: ", datosJson.provincias[0].nombre);
-        console.log("Latitud de la provincia: ", datosJson.provincias[0].centroide.lat);
-        console.log("Longitud de la provincia: ", datosJson.provincias[0].centroide.lon);
+        console.log("\n*** DATOS OBTENIDOS ***");
+        console.log(datosJson);
         console.log("*************\n");
     })
     .catch(error => { 

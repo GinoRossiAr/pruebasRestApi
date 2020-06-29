@@ -11,8 +11,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
-  provincias_controller.mostrarInfo(req.body.nombreProv);
-  res.render('index', { desc: 'Revisar consola de node'});
+  provincias_controller.mostrarInfo(req.body.nombreProv)
+    .then((datos) => { 
+      datos = datos.provincias[0];
+      res.render('index', { desc: 'Revisar consola de node', 
+                            idProvincia: datos.id,
+                            nombreProvincia: datos.nombre,
+                            latitudProvincia: datos.centroide.lat,
+                            longitudProvincia: datos.centroide.lon
+                          }
+      );
+    })
 });
 
 module.exports = router;

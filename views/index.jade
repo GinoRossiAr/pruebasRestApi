@@ -9,3 +9,22 @@ block content
     div.actions
       input(type='submit', value='Buscar')
     p=desc
+  h3 Resultados: 
+  table
+    thead
+      tr
+        td Dato
+        td Valor
+    tbody
+      tr
+        td ID
+        td=idProvincia
+      tr
+        td Nombre
+        td=nombreProvincia
+      tr
+        td Latitud
+        td=latitudProvincia
+      tr
+        td Longitud
+        td=longitudProvincia
