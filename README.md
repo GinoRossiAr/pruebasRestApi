@@ -36,7 +36,8 @@ var provincias_controller = require('../controllers/provinciasController'); // l
 router.post('/', function(req, res) {
   provincias_controller.mostrarInfo(req.body.nombreProv)
     .then((datos) => { 
-      datos = datos.provincias[0]; // se toman los datos de la primera posición del arreglo 'provincias' dentro del objeto JSON.
+      datos = datos.provincias[0]; 
+ 
       // se renderizan los datos para mostrarlos en la vista, mediante variables:
       res.render('index', { desc: 'Revisar consola de node', 
                             idProvincia: datos.id,
