@@ -80,3 +80,7 @@ const mostrarInfo = async(provincia) => { // este modulo se exporta al metodo po
 prov.mostrarInfo = mostrarInfo;
 module.exports = prov;
 ```
+
+## Ejemplo resultado final:
+
+![alt text](https://i.imgur.com/ul0zKa3.png)
